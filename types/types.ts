@@ -4,17 +4,16 @@ export type Option = {
     name: string;
     lat: number;
     lon: number;
-    /*state: string;
-    country: string;*/
 }
 
 export type Props = {
-    search: string; //name
-    options: []; //arreglo vacio
+    search: string;
+    options: [];
     handleSearchChange: (e: ChangeEvent<HTMLInputElement>) => void;
     optionSelect: (option: Option) => void;
     handleSubmit: () => void;
 }
+
 
 export type Forecast = {
     name: string;
@@ -25,6 +24,7 @@ export type Forecast = {
     timezone: number;
     list: [{
         dt: number;
+        dts_txt: string;
         main: {
             feels_like: number;
             grnd_level: number;
@@ -36,7 +36,20 @@ export type Forecast = {
             temp_min: number;
         },
         weather: [{
-            
+            description: string;
+            icon: string;
+            main: string;
         }],
+        wind: {
+            speed: number;
+            deg: number;
+            gust: number;
+        },
+        clouds: {
+            all: number;
+        },
+        pop: number;
+        visibility: number;
     }]
 }
+

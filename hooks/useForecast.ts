@@ -33,7 +33,15 @@ const useForecast = () => {
         `http://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`
       )
         .then((res) => res.json())
-        .then((data) => setForecast(data));
+        .then((data) => {
+            
+            const forecastData = {
+                ...data.city,
+                list: data.list.slice(0, 16)
+            }
+            setForecast(forecastData)
+        }
+        )
     }
   
   
