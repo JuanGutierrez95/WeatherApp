@@ -1,11 +1,11 @@
-import { Option } from '@/types/types';
+import { Forecast, Option } from '@/types/types';
 import { useState, useEffect, ChangeEvent } from 'react';
 
 const useForecast = () => {
     const [search, setSearch] = useState<string>("");
     const [options, setOptions] = useState<[]>([]);
     const [city, setCity] = useState<Option | null>(null);
-    const [forecast, setForecast] = useState<null>(null);
+    const [forecast, setForecast] = useState<Forecast | null>(null);
     const getSearch = (value: string) => {
       fetch(
         `http://api.openweathermap.org/geo/1.0/direct?q=${value.trim()}&limit=5&appid=${
@@ -30,7 +30,7 @@ const useForecast = () => {
   
     const getForecast = (city: Option) => {
       fetch(
-        `http://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`
+        `http://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`
       )
         .then((res) => res.json())
         .then((data) => setForecast(data));
