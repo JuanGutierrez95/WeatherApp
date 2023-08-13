@@ -23,4 +23,20 @@ export type Forecast = {
     sunrise: number;
     sunset: number;
     timezone: number;
+    list: [{
+        dt: number;
+        main: {
+            feels_like: number;
+            grnd_level: number;
+            humadity: number;
+            pressure: number;
+            sea_level: number;
+            temp: number;
+            temp_max: number;  
+            temp_min: number;
+        },
+        weather: [{
+            
+        }],
+    }]
 }
