@@ -59,8 +59,8 @@ const Home: React.FC = () => {
 
   return (
     <main className="flex justify-center items-center bg-gradient-to-br from-sky-400 via-rose-400 to-lime-400 h-[100vh] w-full">
-      (forecast ? (
-
+      {forecast ? (
+        'forecast'
       ):
       <Search
         search={search}
@@ -69,7 +69,7 @@ const Home: React.FC = () => {
         optionSelect={optionSelect}
         handleSubmit={handleSubmit} 
         />
-        )
+      }
     </main>
   );
 };
