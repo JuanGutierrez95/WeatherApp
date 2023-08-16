@@ -1,10 +1,10 @@
 import { Forecast } from "@/types/types"
 
-type Props = {
+type PropsForecast = {
     data: Forecast
 }
 
-const Forecast = ({data} : Props) : JSX.Element => {
+const Forecast = ({data} : PropsForecast) : JSX.Element => {
   return (
     <div>
         <p>Forecast</p>
