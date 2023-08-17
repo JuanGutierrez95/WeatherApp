@@ -69,6 +69,10 @@ const image = `https://openweathermap.org/img/wn/${today.weather[0].icon}.png`;
           items-center bg-white/20 backdrop-blur-ls rounded drop-shadow-lg py-4 mb-5">
           <Sunset /> <span className="mt-2">{getSunTime(data.sunset)}</span>
           </div>
+
+
+
+
         </section>
       </div>
     </div>
