@@ -13,7 +13,7 @@ const Home = () : JSX.Element => {
   } = useForecast();
 
   return (
-    <main className="flex justify-center items-center bg-gradient-to-br from-purple-500 via-amber-300 to-gray-300 h-[125vh] w-full">
+    <main className="flex justify-center items-center bg-gradient-to-br bg-sky-400 h-[125vh] w-full">
       {forecast ? (
         <Forecast data={forecast} />
       ) : (
