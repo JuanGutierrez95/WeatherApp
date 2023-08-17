@@ -1,4 +1,4 @@
-import { getSunTime, getWindDirection } from "@/helpers/helpers";
+import { getHumidityValue, getSunTime, getWindDirection } from "@/helpers/helpers";
 import Sunrise from "@/icons/Sunrise";
 import Sunset from "@/icons/Sunset";
 import { Forecast } from "@/types/types";
@@ -82,7 +82,31 @@ const Forecast = ({ data }: PropsForecast): JSX.Element => {
             icon="wind"
             title="Wind"
             info={`${Math.round(today.wind.speed)} km/h`}
-            description={`${getWindDirection(Math.round(today.wind.deg))}, gusts ${today.wind.gust.toFixed(1)} km/h`}
+            description={`${getWindDirection(
+              Math.round(today.wind.deg)
+            )}, gusts ${today.wind.gust.toFixed(1)} km/h`}
+          />
+          <Tile
+            icon="feels"
+            title="Feels like"
+            info={<Degree temp={Math.round(today.main.feels_like)} />}
+            description={`Feels ${
+              Math.round(today.main.feels_like) < Math.round(today.main.temp)
+                ? "colder"
+                : "warmer"
+            }`}
+          />
+          <Tile 
+          icon="humidity"
+          title="Humidity"
+          info={`${today.main.humidity}%`}
+          description={getHumidityValue(today.main.humidity)}
+          />
+          <Tile
+            icon="pop"
+            title="Precipitation"
+            info={`${Math.round(today.pop * 100)}%`}
+            description={`getPop(today.pop))`}
           />
         </section>
       </div>

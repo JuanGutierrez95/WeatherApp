@@ -12,6 +12,14 @@ export const getWindDirection = (deg: number) : string =>{
 
     return 'N';
 }
+
+export const getHumidityValue = (level: number) : string => {
+    if(level <= 55) return 'Dry and confortable';
+    if(level > 55 && level <= 65) return 'A bit unconfortable, sticky feeling';
+
+    return 'Lots of moisture, unconfortable air'
+}
+
 export const getSunTime = (timeStamp: number) => {
     const date = new Date(timeStamp * 1000);
     let hours = date.getHours().toString();

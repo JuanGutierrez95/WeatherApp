@@ -28,7 +28,7 @@ export type Forecast = {
         main: {
             feels_like: number;
             grnd_level: number;
-            humadity: number;
+            humidity: number;
             pressure: number;
             sea_level: number;
             temp: number;
