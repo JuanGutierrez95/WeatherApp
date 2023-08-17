@@ -23,14 +23,14 @@ const Search = ({
             onChange={handleSearchChange}
             className="px-2 py-1 border-2 border-white rounded-l-md"
           />
-          <ul className="absolute top-9 bg-white ml-0 rounded-b-md">
+          <ul className="absolute ml-0 bg-white top-9 rounded-b-md">
             {options.map((option: Option, index: number) => (
               <li key={option.name + "-" + index}>
                 <button
-                  className="text-left text-sm w-full px-2 py-1 border-b-2 border-blue-200 hover:bg-blue-100 cursor-pointer"
+                  className="w-full px-2 py-1 text-sm text-left border-b-2 border-blue-200 cursor-pointer hover:bg-blue-100"
                   onClick={() => optionSelect(option)}
                 >
-                  {option.name}
+                  {option.name}, {option.country}
                 </button>
               </li>
             ))}

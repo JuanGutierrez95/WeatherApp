@@ -2,6 +2,7 @@ import { ChangeEvent } from 'react';
 
 export type Option = {
     name: string;
+    country: string;
     lat: number;
     lon: number;
 }
