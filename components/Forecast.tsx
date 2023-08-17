@@ -1,4 +1,4 @@
-import { getSunTime } from "@/helpers/helpers";
+import { getSunTime, getWindDirection } from "@/helpers/helpers";
 import Sunrise from "@/icons/Sunrise";
 import Sunset from "@/icons/Sunset";
 import { Forecast } from "@/types/types";
@@ -20,7 +20,7 @@ const Forecast = ({ data }: PropsForecast): JSX.Element => {
   const today = data.list[0];
   console.log({ today });
 
-const image = `https://openweathermap.org/img/wn/${today.weather[0].icon}.png`;
+  const image = `https://openweathermap.org/img/wn/${today.weather[0].icon}.png`;
   return (
     <div
       className="w-full md:max-w-[500px] py-4 md:py-4
@@ -43,12 +43,15 @@ const image = `https://openweathermap.org/img/wn/${today.weather[0].icon}.png`;
 
         <section className="flex pb-2 mt-4 mb-5 overflow-x-scroll">
           {data.list.map((item, index) => (
-            <div className="inline-block text-center w-[50px] flex-shrink-0" key={index}>
+            <div
+              className="inline-block text-center w-[50px] flex-shrink-0"
+              key={index}
+            >
               <p className="text-sm">
-                {
-                  index === 0 ? 'Now' : new Date(item.dt * 1000).getHours() + ':00'
-                }
-                </p>
+                {index === 0
+                  ? "Now"
+                  : new Date(item.dt * 1000).getHours() + ":00"}
+              </p>
               <Image
                 src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
                 width={50}
@@ -62,18 +65,25 @@ const image = `https://openweathermap.org/img/wn/${today.weather[0].icon}.png`;
           ))}
         </section>
         <section className="flex flex-wrap justify-between text-zinc-700">
-          <div className="w-[140px] text-xs font-bold flex flex-col
-          items-center bg-white/20 backdrop-blur-ls rounded drop-shadow-lg py-4 mb-5">
-         <Sunrise/> <span className="mt-2">{getSunTime(data.sunrise)}</span>
+          <div
+            className="w-[140px] text-xs font-bold flex flex-col
+          items-center bg-white/20 backdrop-blur-ls rounded drop-shadow-lg py-4 mb-5"
+          >
+            <Sunrise /> <span className="mt-2">{getSunTime(data.sunrise)}</span>
           </div>
-          <div className="w-[140px] text-xs font-bold flex flex-col
-          items-center bg-white/20 backdrop-blur-ls rounded drop-shadow-lg py-4 mb-5">
-          <Sunset /> <span className="mt-2">{getSunTime(data.sunset)}</span>
+          <div
+            className="w-[140px] text-xs font-bold flex flex-col
+          items-center bg-white/20 backdrop-blur-ls rounded drop-shadow-lg py-4 mb-5"
+          >
+            <Sunset /> <span className="mt-2">{getSunTime(data.sunset)}</span>
           </div>
 
-                <Tile icon="wind" title="Wind" info="Info" description="description" />
-
-
+          <Tile
+            icon="wind"
+            title="Wind"
+            info={`${Math.round(today.wind.speed)} km/h`}
+            description={`${getWindDirection(Math.round(today.wind.deg))}, gusts ${today.wind.gust.toFixed(1)} km/h`}
+          />
         </section>
       </div>
     </div>
