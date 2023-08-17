@@ -1,4 +1,3 @@
-import { timeStamp } from "console";
 
 export const getWindDirection = (deg: number) : string =>{
 
@@ -36,4 +35,14 @@ export const getPop = (value: number) : string => {
     if(value > 0.33 && value <= 0.66) return 'Moderate probability'
 
     return 'High probability'
+}
+
+export const getVisibilityValue = (number: number) : string => {
+    if(number <= 50) return 'Dangerously foggy'
+    if(number > 50 && number <= 500) return 'Expect heavy fog'
+    if(number > 500 && number <= 2000) return 'Expect some fog'
+    if(number > 2000 && number <= 9000) return 'Expect some haze'
+
+    return 'Very clear day'
+
 }
