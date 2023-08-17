@@ -1,4 +1,4 @@
-import { getSunTime } from "@/helpers";
+import { getSunTime } from "@/helpers/helpers";
 import Sunrise from "@/icons/Sunrise";
 import Sunset from "@/icons/Sunset";
 import { Forecast } from "@/types/types";

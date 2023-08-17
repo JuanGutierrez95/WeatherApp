@@ -1,5 +1,5 @@
 import {WiBarometer} from 'react-icons/wi'
-const Barometer = () => {
+const Pressure = () => {
   return (
     <div>
         <WiBarometer />
@@ -7,4 +7,4 @@ const Barometer = () => {
   )
 }
 
-export default Barometer
+export default Pressure

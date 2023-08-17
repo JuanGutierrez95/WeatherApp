@@ -1,5 +1,5 @@
 import {BsThermometerHalf} from 'react-icons/bs'
-const ThermometerHalf = () => {
+const Feels = () => {
   return (
     <div>
         <BsThermometerHalf />
@@ -7,4 +7,4 @@ const ThermometerHalf = () => {
   )
 }
 
-export default ThermometerHalf
+export default Feels
