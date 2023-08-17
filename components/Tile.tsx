@@ -1,16 +1,16 @@
-import Feels from "@/icons/Feels"
-import Humidity from "@/icons/Humidity"
-import Pop from "@/icons/Pop"
-import Pressure from "@/icons/Pressure"
-import Visibility from "@/icons/Visibility"
-import Wind from "@/icons/Wind"
+import Feels from "@/icons/Feels";
+import Humidity from "@/icons/Humidity";
+import Pop from "@/icons/Pop";
+import Pressure from "@/icons/Pressure";
+import Visibility from "@/icons/Visibility";
+import Wind from "@/icons/Wind";
 
 type IProps = {
-    icon: 'wind' | 'feels' | 'humidity' | 'visibility' | 'pressure' | 'pop'
-    title: string
-    info: string | JSX.Element
-    description: string
-}
+  icon: "wind" | "feels" | "humidity" | "visibility" | "pressure" | "pop";
+  title: string;
+  info: string | JSX.Element;
+  description: string;
+};
 
 const icons = {
   wind: Wind,
@@ -18,17 +18,18 @@ const icons = {
   humidity: Humidity,
   visibility: Visibility,
   pressure: Pressure,
-  pop: Pop
-}
-const Tile = ({
-    icon, title, info, description
-}: IProps) : JSX.Element => {
-  const Icon = icons[icon]
+  pop: Pop,
+};
+const Tile = ({ icon, title, info, description }: IProps): JSX.Element => {
+  const Icon = icons[icon];
   return (
-    <div>
-        <Icon />
-    </div>
-  )
-}
+    <article
+      className="w-[140px] h-[130px] text-zinc-700 bg-white/20
+    backdrop-blur-lg rounded drop-shadow-lg p-2 mb-5 flex flex-col justify-between"
+    >
+      <Icon /> <h4 className="ml-1">{title}</h4> <h4>{info}</h4> <h4>{description}</h4>
+    </article>
+  );
+};
 
-export default Tile
+export default Tile;
