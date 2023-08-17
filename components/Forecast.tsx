@@ -18,16 +18,16 @@ const Degree = ({ temp }: { temp: number }): JSX.Element => (
 
 const Forecast = ({ data }: PropsForecast): JSX.Element => {
   const today = data.list[0];
-  console.log({ today });
+  
 
   const image = `https://openweathermap.org/img/wn/${today.weather[0].icon}.png`;
   return (
     <div
-      className="w-full md:max-w-[500px] py-4 md:py-4
+      className="w-full md:max-w-[700px] py-4 md:py-4
     md:px-10 lg:px-24 h-full lg:h-auto bg-white bg-opacity-20
     backdrop-blur-ls rounded drop-shadow-lg"
     >
-      <div className="mx-auto w-[300px]">
+      <div className="mx-auto w-[500px]">
         <section className="text-center">
           <h2 className="text-2xl font-black">{data.name}</h2>
           <span className="font-thin">{data.country}</span>

@@ -30,8 +30,8 @@ const Tile = ({ icon, title, info, description }: IProps): JSX.Element => {
       <div className="flex items-center text-sm font-bold">
         <Icon /> <h4 className="ml-1">{title}</h4>
       </div>
-      <h3 className="mt-2 font-bold text-md">{info}</h3>
-      <p className="font-bold text-md">{description}</p>
+      <h3 className="mt-2 text-xs font-bold">{info}</h3>
+      <p className="text-xs font-bold">{description}</p>
     </article>
   );
 };

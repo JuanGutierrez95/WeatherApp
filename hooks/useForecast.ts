@@ -24,7 +24,6 @@ const useForecast = () => {
       setSearch(inputValue);
       if (lettersOnly === "") return;
       getSearch(inputValue);
-      console.log(inputValue);
     };
   
   
