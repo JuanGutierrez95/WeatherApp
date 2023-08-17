@@ -57,6 +57,14 @@ const image = `https://openweathermap.org/img/wn/${today.weather[0].icon}.png`;
             </div>
           ))}
         </section>
+        <section className="flex justify-between text-zinc-700">
+          <div className="w-[140px] text-xs font-bold flex flex-col
+          items-center bg-white/20 backdrop-blur-ls rounded drop-shadow-lg py-4 mb-5">
+          </div>
+          <div className="w-[140px] text-xs font-bold flex flex-col
+          items-center bg-white/20 backdrop-blur-ls rounded drop-shadow-lg py-4 mb-5">
+          </div>
+        </section>
       </div>
     </div>
   );
